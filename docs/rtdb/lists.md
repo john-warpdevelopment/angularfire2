@@ -228,7 +228,7 @@ export class AppComponent {
     this.itemsRef = db.list('messages');
     // Use snapshotChanges().map() to store the key
     this.items = this.itemsRef.snapshotChanges().map(changes => {
-      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() })});
     });
   }
   addItem(newName: string) {
